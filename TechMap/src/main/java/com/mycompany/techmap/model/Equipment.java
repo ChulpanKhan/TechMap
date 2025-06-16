@@ -1,4 +1,7 @@
-
+/**
+ * Представляет оборудование, которое используется в процессах.
+ * Хранит название, модель и количество, а также информацию об использовании.
+ */
 package com.mycompany.techmap.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
