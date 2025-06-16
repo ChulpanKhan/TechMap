@@ -2,7 +2,9 @@
 package com.mycompany.techmap.model;
 
 import java.util.Objects;
-
+/**
+ * Представляет изделие, имеющее стратегическое направление и технологическую карту.
+ */
 public class Product {
     private String name;
     private String strategicDirection;
@@ -18,26 +20,41 @@ public class Product {
         this.technologyMap = new TechnologyMap();
     }
     
-    //name
+    /**
+     * @return имя изделия
+     */
     public String getName(){
         return name;
     }
+    /**
+     * @param name имя изделия
+     */
     public void setName(String name){
         this.name = name;
     }
     
-    //strategicDirection
+    /**
+     * @return стратегическое направление изделия
+     */
     public String getStrategicDirection(){
         return strategicDirection;
     }    
+    /**
+     * @param strategicDirection новое стратегическое направление
+     */
     public void setStrategicDirection(String strategicDirection){
         this.strategicDirection = strategicDirection;
     }
     
-    //technologyMap
+    /**
+     * @return технологическая карта изделия
+     */
     public TechnologyMap getTechnologyMap(){
         return technologyMap;
-    }    
+    }   
+    /**
+     * @param technologyMap новая технологическая карта
+     */
     public void setTechnologyMap(TechnologyMap technologyMap){
         this.technologyMap = technologyMap;
     }
