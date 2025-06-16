@@ -1,9 +1,10 @@
-
 package com.mycompany.techmap.model;
 
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Представляет один этап технологического процесса.
+ */
 public class ProcessStep {
     private String id;
     private String name;
@@ -21,57 +22,96 @@ public class ProcessStep {
         this.organization = organization;
     }
     
-    //id
+    /**
+     * @return уникальный идентификатор этапа
+     */
     public String getId(){
         return id;
     }
+    /**
+     * @param id новый идентификатор
+     */
     public void setId(String id){
         this.id = id;
     }
     
-    //name
+    /**
+     * @return название этапа
+     */
     public String getName(){
         return name;
     }
+    /**
+     * @param name новое название
+     */
     public void setName(String name){
         this.name = name;
     }
-    //organization
+    /**
+     * @return организация
+     */
     public Organization getOrganization() {
         return organization;
     }
+    /**
+     * @param organization новая организация
+     */
     public void setOrganization(Organization organization) {
         this.organization = organization;
     }
-    //components
+    /**
+     * @return список компонентов
+     */
     public List<Component> getComponents() {
         return components;
     }
+    /**
+     * @param components новые компоненты
+     */
     public void setComponents(List<Component> components) {
         this.components = components;
     }
-    //equipment
+    /**
+     * @return список оборудования
+     */
     public List<Equipment> getEquipment() {
         return equipment;
     }
+    /**
+     * @param equipment новые оборудования
+     */    
     public void setEquipment(List<Equipment> equipment) {
         this.equipment = equipment;
     }
-    //personnel
+    /**
+     * @return требования к персоналу
+     */
     public List<PersonnelRequirement> getPersonnel() {
         return personnel;
     }
+    /**
+     * @param personnel новые требования к персоналу
+     */    
     public void setPersonnel(List<PersonnelRequirement> personnel) {
         this.personnel = personnel;
     }
-    //nextStepIds
+
+    /**
+     * @return список ID следующих этапов
+     */
     public List<String> getNextStepIds() {
         return nextStepIds;
     }
+    /**
+     * @param nextStepIds новые ID следующих этапов
+     */
     public void setNextStepIds(List<String> nextStepIds) {
         this.nextStepIds = nextStepIds;
     }
-    
+    /**
+     * Добавляет ID следующего этапа.
+     * @param stepId идентификатор следующего этапа
+     */
     public void addNextStep(String stepId) {
         nextStepIds.add(stepId);
     }
