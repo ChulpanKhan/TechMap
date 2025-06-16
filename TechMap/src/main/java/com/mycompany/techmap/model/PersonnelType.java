@@ -1,4 +1,6 @@
-
+/**
+ * Представляет тип персонала (например, инженер, оператор).
+ */
 package com.mycompany.techmap.model;
 
 import java.util.Objects;
@@ -11,10 +13,15 @@ public class PersonnelType {
     public PersonnelType(String role) {
         this.role = role;
     }
-
+    /**
+     * @return роль персонала
+     */
     public String getRole() {
         return role;
-    }
+    }    
+    /**
+     * @param role новая роль
+     */
     public void setRole(String role) {
         this.role = role;
     }
