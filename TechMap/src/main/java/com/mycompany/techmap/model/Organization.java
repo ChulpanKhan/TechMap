@@ -1,4 +1,6 @@
-
+/**
+ * Представляет организацию, выполняющую производственные этапы.
+ */
 package com.mycompany.techmap.model;
 
 import java.util.Objects;
@@ -13,12 +15,31 @@ public class Organization {
         this.name = name;
         this.address = address;
     }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    
+    /**
+     * @return название организации
+     */
+    public String getName() {
+        return name;
+    }
+    /**
+     * @param name новое название
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+    /**
+     * @return адрес организации
+     */
+    public String getAddress() {
+        return address;
+    }
+    /**
+     * @param address новый адрес
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -35,6 +56,6 @@ public class Organization {
     
     @Override
     public String toString() {
-        return name + " — " + address;
+        return name + " [" + address + "]";
     }
 }
