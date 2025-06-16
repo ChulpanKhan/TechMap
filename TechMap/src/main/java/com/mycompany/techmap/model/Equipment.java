@@ -20,34 +20,55 @@ public class Equipment {
         this.model = model;
         this.quantity = quantity;
     }
-
+    
+    /**
+     * @return название оборудования
+     */
     public String getName() {
         return name;
     }
+    /**
+     * @param name новое название оборудования
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    /**
+     * @return модель оборудования
+     */
     public String getModel() {
         return model;
     }
+    /**
+     * @param model новый модель оборудования
+     */
     public void setModel(String model) {
         this.model = model;
     }
-
+    /**
+     * @return общее количество оборудования на складе
+     */
     public int getQuantity() {
         return quantity;
     }
-
+    /**
+     * @param quantity новое общее количество оборудования
+     */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
     
+    /**
+     * @return список использований оборудования в разных изделиях
+     */
     public List<UsageInfo> getUsages() {
         return usages;
     }    
-
- @JsonIgnore
+    
+    /**
+     * @return количество свободного (неиспользуемых) оборудования
+     */
+    @JsonIgnore
     public int getAvailableQuantity() {
         int usedTotal = 0;
         for (UsageInfo usage : usages) {
@@ -55,7 +76,12 @@ public class Equipment {
         }
         return quantity - usedTotal;
     }
-    
+    /**
+     * Добавляет информацию об использовании оборудования в конкретном изделии.
+     *
+     * @param product изделие
+     * @param amount количество использованного оборудования
+     */
     public void addUsage(Product product, int amount) {
         for (UsageInfo usage : usages) {
             if (usage.getProduct().equals(product)) {
@@ -82,6 +108,6 @@ public class Equipment {
     
     @Override
     public String toString() {
-        return name + " [" + model + "] — свободно: " + getAvailableQuantity();
+        return name + " [" + model + "]: " + getAvailableQuantity() + " шт.";
     }
 }
