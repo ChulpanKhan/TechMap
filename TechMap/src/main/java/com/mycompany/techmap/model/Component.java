@@ -49,6 +49,7 @@ public class Component {
     public void setType(String type) {
         this.type = type;
     }
+    
     /**
      * @return общее количество компонента на складе
      */
