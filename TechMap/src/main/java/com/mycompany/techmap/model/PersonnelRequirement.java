@@ -1,4 +1,6 @@
-
+/**
+ * Представляет требование к персоналу для этапа.
+ */
 package com.mycompany.techmap.model;
 
 import java.util.Objects;
@@ -13,12 +15,30 @@ public class PersonnelRequirement {
         this.type = type;
         this.manHours = manHours;
     }
-
-    public PersonnelType getType() { return type; }
-    public void setType(PersonnelType type) { this.type = type; }
-
-    public int getManHours() { return manHours; }
-    public void setManHours(int manHours) { this.manHours = manHours; }
+    /**
+     * @return тип персонала
+     */
+    public PersonnelType getType() {
+        return type;
+    }
+    /**
+     * @param type тип персонала
+     */
+    public void setType(PersonnelType type) {
+        this.type = type;
+    }
+    /**
+     * @return человеко-часы
+     */
+    public int getManHours() {
+        return manHours;
+    }
+    /**
+     * @param manHours количество человеко-часов
+     */
+    public void setManHours(int manHours) {
+        this.manHours = manHours;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -36,6 +56,6 @@ public class PersonnelRequirement {
         
     @Override
     public String toString() {
-        return type + " [" + manHours + "]";
+        return type + " [" + manHours + "чел/час]";
     }
 }
