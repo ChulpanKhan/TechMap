@@ -36,6 +36,7 @@ public class Equipment {
     public void setName(String name) {
         this.name = name;
     }
+    
     /**
      * @return модель оборудования
      */
@@ -48,6 +49,7 @@ public class Equipment {
     public void setModel(String model) {
         this.model = model;
     }
+    
     /**
      * @return общее количество оборудования на складе
      */
