@@ -1,14 +1,14 @@
-/**
- * Представляет оборудование, которое используется в процессах.
- * Хранит название, модель и количество, а также информацию об использовании.
- */
+
 package com.mycompany.techmap.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Представляет оборудование, которое используется в процессах.
+ * Хранит название, модель и количество, а также информацию об использовании.
+ */
 public class Equipment {
     private String name;
     private String model;

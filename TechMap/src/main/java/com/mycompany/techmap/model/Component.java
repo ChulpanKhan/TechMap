@@ -1,14 +1,14 @@
-/**
- * Представляет компонент, используемый в технологических процессах.
- * Хранит название, тип, общее количество и информацию об использовании в изделиях.
- */
+
 package com.mycompany.techmap.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Представляет компонент, используемый в технологических процессах.
+ * Хранит название, тип, общее количество и информацию об использовании в изделиях.
+ */
 public class Component {
     private String name;
     private String type;

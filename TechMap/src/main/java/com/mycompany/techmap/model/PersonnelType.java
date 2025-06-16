@@ -1,10 +1,10 @@
-/**
- * Представляет тип персонала (например, инженер, оператор).
- */
+
 package com.mycompany.techmap.model;
 
 import java.util.Objects;
-
+/**
+ * Представляет тип персонала (например, инженер, оператор).
+ */
 public class PersonnelType {
     private String role;
     

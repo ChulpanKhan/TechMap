@@ -1,10 +1,10 @@
-/**
- * Представляет требование к персоналу для этапа.
- */
+
 package com.mycompany.techmap.model;
 
 import java.util.Objects;
-
+/**
+ * Представляет требование к персоналу для этапа.
+ */
 public class PersonnelRequirement {
     private PersonnelType type;
     private int manHours;

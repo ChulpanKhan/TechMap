@@ -1,10 +1,10 @@
-/**
- * Представляет организацию, выполняющую производственные этапы.
- */
+
 package com.mycompany.techmap.model;
 
 import java.util.Objects;
-
+/**
+ * Представляет организацию, выполняющую производственные этапы.
+ */
 public class Organization {
     private String name;
     private String address;
