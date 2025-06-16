@@ -1,4 +1,7 @@
-
+/**
+ * Представляет компонент, используемый в технологических процессах.
+ * Хранит название, тип, общее количество и информацию об использовании в изделиях.
+ */
 package com.mycompany.techmap.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,34 +23,56 @@ public class Component {
         this.type = type;
         this.quantity = quantity;
     }
-
+    
+    /**
+     * @return название компонента
+     */
     public String getName() {
         return name;
     }
+    /**
+     * @param name новое название компонента
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    
+    /**
+     * @return тип компонента
+     */
     public String getType() {
         return type;
     }
+    /**
+     * @param type новый тип компонента
+     */
     public void setType(String type) {
         this.type = type;
     }
-    
+    /**
+     * @return общее количество компонента на складе
+     */
     public int getQuantity() {
         return quantity;
     }
-
+    /**
+     * @param quantity новое общее количество компонента
+     */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
     
+    /**
+     * @return список использований компонента в разных изделиях
+     */
     public List<UsageInfo> getUsages() {
         return usages;
     }
     
-     @JsonIgnore
+    /**
+     * @return количество свободных (неиспользуемых) компонентов
+     */
+    @JsonIgnore
     public int getAvailableQuantity() {
         int usedTotal = 0;
         for (UsageInfo usage : usages) {
@@ -55,7 +80,12 @@ public class Component {
         }
         return quantity - usedTotal;
     }
-    
+    /**
+     * Добавляет информацию об использовании компонента в конкретном изделии.
+     *
+     * @param product изделие
+     * @param amount количество использованных компонентов
+     */
     public void addUsage(Product product, int amount) {
         for (UsageInfo usage : usages) {
             if (usage.getProduct().equals(product)) {
@@ -81,12 +111,6 @@ public class Component {
     
     @Override
     public String toString() {
-        // Для компонентов из репозитория (весь список) пусть останется старый стиль
-        if (this.usages == null || this.usages.isEmpty()) {
-            return name + " [" + type + "]: " + getAvailableQuantity();
-        }
-
-        // А для компонентов, которые добавлены как использованные
-        return name + " [" + type + "] — используется: " + quantity;
+        return name + " [" + type + "]: " + getAvailableQuantity() + " шт.";
     }
 }
