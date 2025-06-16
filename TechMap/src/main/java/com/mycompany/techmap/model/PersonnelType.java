@@ -13,6 +13,7 @@ public class PersonnelType {
     public PersonnelType(String role) {
         this.role = role;
     }
+    
     /**
      * @return роль персонала
      */
