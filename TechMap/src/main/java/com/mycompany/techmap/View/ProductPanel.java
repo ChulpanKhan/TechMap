@@ -138,7 +138,7 @@ public class ProductPanel extends javax.swing.JPanel {
     private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
         Product selected = productList.getSelectedValue();
         if (selected != null) {
-            JFileChooser chooser = new JFileChooser();
+            JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
             chooser.setFileFilter(new FileNameExtensionFilter("JSON файлы", "json"));
             int res = chooser.showSaveDialog(this);
             if (res == JFileChooser.APPROVE_OPTION) {
@@ -190,7 +190,7 @@ public class ProductPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_importButtonActionPerformed
 
     private void exportAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportAllButtonActionPerformed
-        JFileChooser chooser = new JFileChooser();
+        JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int result = chooser.showSaveDialog(this);
 
