@@ -38,7 +38,7 @@
                   <Component id="importButton" max="32767" attributes="0"/>
                   <Component id="showGraphButton" max="32767" attributes="0"/>
                   <Component id="addProductButton" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jButton1" max="32767" attributes="0"/>
+                  <Component id="exportAllButton" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
           </Group>
@@ -63,7 +63,7 @@
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="exportButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="exportAllButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane2" min="-2" pref="376" max="-2" attributes="0"/>
               </Group>
@@ -149,12 +149,12 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="exportAllButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x42d;&#x43a;&#x441;&#x43f;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x43e;&#x432;&#x430;&#x442;&#x44c; &#x432;&#x441;&#x435;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportAllButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
