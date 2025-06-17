@@ -7,7 +7,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class UsageDialog extends javax.swing.JDialog {
 
-
     public UsageDialog(java.awt.Frame parent, boolean modal, String componentName, List<UsageInfo> usages) {
         super(parent, modal);
         initComponents();
