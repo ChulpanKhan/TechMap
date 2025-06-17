@@ -60,7 +60,7 @@ public class TechMapGraphPanel extends JPanel {
                 }
             }
             mxCompactTreeLayout layout = new mxCompactTreeLayout(graph, false);
-            layout.setLevelDistance(80);
+            layout.setLevelDistance(40);
             layout.setNodeDistance(30);
             layout.execute(parent);           
         } finally {
@@ -74,7 +74,7 @@ public class TechMapGraphPanel extends JPanel {
         graph.setCellsMovable(false);
         graph.setCellsResizable(false);
         graph.setAllowDanglingEdges(false);
-        
+
         //клик по узлу
         graphComponent.getGraphControl().addMouseListener(new MouseAdapter() {
             @Override
@@ -82,17 +82,22 @@ public class TechMapGraphPanel extends JPanel {
                 Object cell = graphComponent.getCellAt(e.getX(), e.getY());
                 if (cell != null && graph.getModel().isVertex(cell)) {
                     String stepName = graph.getLabel(cell);
-                    ProcessStep clickedStep = techMap.getAllSteps().stream()
-                            .filter(s -> s.getName().equals(stepName))
-                            .findFirst()
-                            .orElse(null);
+                    ProcessStep clickedStep = null;
+
+                    for (ProcessStep step : techMap.getAllSteps()) {
+                        if (step.getName().equals(stepName)) {
+                            clickedStep = step;
+                            break;
+                        }
+                    }
+
                     if (clickedStep != null) {
                         showStepDetails(clickedStep);
                     }
                 }
             }
         });
-        
+
         add(graphComponent);
     }
         

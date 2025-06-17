@@ -41,6 +41,7 @@ public class TechMapGraphEditorDialog extends javax.swing.JDialog {
         addStepButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Теxнологическая карта");
 
         graphPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         graphPanel.setToolTipText("Нажмите на этап, чтобы увидеть его характеристики");
@@ -49,7 +50,7 @@ public class TechMapGraphEditorDialog extends javax.swing.JDialog {
         graphPanel.setLayout(graphPanelLayout);
         graphPanelLayout.setHorizontalGroup(
             graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addGap(0, 331, Short.MAX_VALUE)
         );
         graphPanelLayout.setVerticalGroup(
             graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
