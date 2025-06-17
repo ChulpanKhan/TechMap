@@ -339,6 +339,14 @@ addPersonnel.addActionListener(new java.awt.event.ActionListener() {
         try {
             PersonnelType type = (PersonnelType) personnelTypeBox.getSelectedItem();
             int hours = Integer.parseInt(manHoursField.getText());
+
+            if (hours <= 0) {
+                JOptionPane.showMessageDialog(this,
+                        "Количество не может быть отрицательным.",
+                        "Некорректное значение",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
             personnelModel.addElement(new PersonnelRequirement(type, hours));
             manHoursField.setText("");
         } catch (NumberFormatException ex) {
