@@ -13,7 +13,6 @@ public class JsonServiceTest {
 
     @BeforeEach
     public void setup() throws Exception {
-        // Создаём продукт
         testProduct = new Product("TestProduct", "Микроэлектроника");
 
         Organization org = new Organization("TestOrg", "Москва");
@@ -27,20 +26,16 @@ public class JsonServiceTest {
 
         testProduct.getTechnologyMap().addStep(step);
 
-        // Временный файл
         tempFile = File.createTempFile("test_product", ".json");
         tempFile.deleteOnExit();
     }
 
     @Test
     public void testSaveAndLoadProduct() throws Exception {
-        // Сохраняем продукт
         JsonService.saveProductToFile(testProduct, tempFile);
 
-        // Загружаем его обратно
         Product loaded = JsonService.loadProductFromFile(tempFile);
 
-        // Проверки
         assertNotNull(loaded, "Загруженный продукт не должен быть null");
         assertEquals("TestProduct", loaded.getName());
         assertEquals("Микроэлектроника", loaded.getStrategicDirection());

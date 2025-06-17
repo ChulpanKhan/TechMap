@@ -4,10 +4,6 @@ import com.mycompany.techmap.model.*;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author MyHuawei
- */
 public class DataRepositoryTest {
 
     private DataRepository repo;
@@ -15,7 +11,7 @@ public class DataRepositoryTest {
     @BeforeEach
     public void setup() {
         repo = DataRepository.getInstance();
-        repo.getComponents().clear(); // обнулим перед тестом
+        repo.getComponents().clear();
         repo.getEquipment().clear();
     }
 
@@ -28,7 +24,6 @@ public class DataRepositoryTest {
         assertNotNull(found);
         assertEquals(10, found.getQuantity());
     }
-
 
     @Test
     public void testAddEquipmentAndFind() {
