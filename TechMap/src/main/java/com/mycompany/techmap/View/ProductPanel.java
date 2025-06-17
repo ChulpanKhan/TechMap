@@ -250,7 +250,6 @@ public class ProductPanel extends javax.swing.JPanel {
     private void showGraphButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showGraphButtonActionPerformed
         Product selected = productList.getSelectedValue();
         if (selected != null) {
-            // Открываем полноценное окно-редактор техкарты
             TechMapGraphEditorDialog editor = new TechMapGraphEditorDialog(selected);
             editor.setVisible(true);
         } else {
