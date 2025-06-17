@@ -118,8 +118,7 @@ public class TechMapGraphPanel extends JPanel {
 
         info.append("\nПерсонал:\n");
         for (PersonnelRequirement p : step.getPersonnel()) {
-            info.append("- ").append(p.getType().getRole()).append(": ")
-                    .append(p.getManHours()).append(" ч.\n");
+            info.append("- ").append(p.getType().getRole()).append(": ").append(p.getManHours()).append(" ч.\n");
         }
 
         JOptionPane.showMessageDialog(this, info.toString(), "Информация об этапе", JOptionPane.INFORMATION_MESSAGE);
