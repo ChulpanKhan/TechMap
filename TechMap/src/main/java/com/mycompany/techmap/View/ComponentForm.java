@@ -104,9 +104,17 @@ public class ComponentForm extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Заполните все поля.");
             return;
         }
-        
+
         try {
             int quantity = Integer.parseInt(quantityText);
+
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this,
+                        "Количество должно быть положительным.",
+                        "Некорректное значение",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
             createdComponent = new Component(name, type, quantity);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Введите корректное количество.");
