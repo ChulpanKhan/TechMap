@@ -5,7 +5,10 @@ import com.mycompany.techmap.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Центральное хранилище всех данных приложения: компонентов, оборудования, организаций, персонала и изделий.
+ * Реализован как Singleton.
+ */
 public class DataRepository {
     
     private List<Component> components;
@@ -27,14 +30,27 @@ public class DataRepository {
     public static DataRepository getInstance() {
         return instance;
     }
-
+    
+    /**
+     * Регистрирует ресурсы этапа (добавляет их в хранилище).
+     * @param product изделие, к которому относится этап
+     * @param step этап
+     */
     public void registerStepResources(Product product, ProcessStep step) {
         registerComponents(product, step.getComponents());
         registerEquipment(product, step.getEquipment());
         registerOrganization(step.getOrganization());
         registerPersonnelTypes(step.getPersonnel());
     }
-
+    
+    /**
+     * Регистрирует список компонентов, связанных с изделием. Если компонент уже
+     * существует, увеличивает его количество и добавляет использование. Если
+     * компонент новый — добавляет в хранилище.
+     *
+     * @param product изделие, в рамках которого используются компоненты
+     * @param componentsToAdd список компонентов, подлежащих регистрации
+     */
     private void registerComponents(Product product, List<Component> componentsToAdd) {
         for (Component c : componentsToAdd) {
             Component existing = findComponent(c.getName(), c.getType());
@@ -48,7 +64,15 @@ public class DataRepository {
             }
         }
     }
-
+    
+    /**
+     * Регистрирует список оборудования, связанного с изделием. При наличии уже
+     * существующего оборудования увеличивает его количество и usage. Новое
+     * оборудование добавляется в хранилище.
+     *
+     * @param product изделие, в рамках которого используется оборудование
+     * @param equipmentToAdd список оборудования для регистрации
+     */
     private void registerEquipment(Product product, List<Equipment> equipmentToAdd) {
         for (Equipment e : equipmentToAdd) {
             Equipment existing = findEquipment(e.getName(), e.getModel());
@@ -62,17 +86,32 @@ public class DataRepository {
             }
         }
     }
-
+    
+    /**
+     * Регистрирует организацию в хранилище, если она ещё не была добавлена.
+     *
+     * @param org организация, участвующая в производственном процессе
+     */
     private void registerOrganization(Organization org) {
         addOrganization(org);
     }
-
+    
+    /**
+     * Регистрирует все типы персонала, используемые в переданном списке
+     * требований. При наличии новых типов — добавляет их в хранилище.
+     *
+     * @param personnel список требований к персоналу, содержащих используемые
+     * типы
+     */
     private void registerPersonnelTypes(List<PersonnelRequirement> personnel) {
         for (PersonnelRequirement p : personnel) {
             addPersonnelType(p.getType());
         }
     }
-
+    /**
+     * Проверяет, есть ли доступные (неиспользованные) компоненты и оборудование.
+     * @return true если что-то доступно
+     */
     public boolean hasAvailableResources() {
         boolean foundComponent = false;
         for (Component component : components) {
@@ -118,7 +157,7 @@ public class DataRepository {
         return new ArrayList<>(products);
     }
 
-    //======= компоненты =======
+    //компоненты
     public void addComponent(Component component) {
         Component existing = findComponent(component.getName(), component.getType());
         if (existing != null) {
@@ -138,8 +177,7 @@ public class DataRepository {
         return null;
     }
 
-
-    //====== оборудование ======
+    //оборудование
     public void addEquipment(Equipment equipment) {   
         Equipment existing = findEquipment(equipment.getName(), equipment.getModel());
         if (existing != null) {
@@ -158,7 +196,7 @@ public class DataRepository {
         return null;
     }
 
-    // ====== организации ======
+    //организации
     public void addOrganization(Organization org) {
         if (!organizations.contains(org)) {
             organizations.add(org);
@@ -174,7 +212,7 @@ public class DataRepository {
         return null;
     }
 
-    // ====== типы персонала ======
+    //типы персонала
     public void addPersonnelType(PersonnelType type) {
         if (!personnelTypes.contains(type)) {
             personnelTypes.add(type);
