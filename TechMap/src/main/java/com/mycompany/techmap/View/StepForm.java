@@ -69,6 +69,7 @@ quantityEquipField = new javax.swing.JTextField();
 addEquip = new javax.swing.JButton();
 
 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+setTitle("Добавление этапа");
 
 nameLabel.setText("Название этапа:");
 
@@ -323,6 +324,9 @@ addPersonnel.addActionListener(new java.awt.event.ActionListener() {
         for (int i = 0; i < personnelModel.size(); i++) {
             step.getPersonnel().add(personnelModel.get(i));
         }
+
+        DataRepository repo = DataRepository.getInstance();
+        repo.addProduct(currentProduct);
 
         step.setNextStepIds(new ArrayList<>());
 
