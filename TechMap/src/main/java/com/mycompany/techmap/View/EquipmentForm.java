@@ -104,6 +104,14 @@ public class EquipmentForm extends javax.swing.JDialog {
         }
         try {
             int quantity = Integer.parseInt(quantityText);
+
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this,
+                        "Количество должно быть положительным.",
+                        "Некорректное значение",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
             createdEquipment = new Equipment(name, model, quantity);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Введите корректное количество.");
