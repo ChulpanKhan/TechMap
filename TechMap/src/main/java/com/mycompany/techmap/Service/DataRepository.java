@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * Центральное хранилище всех данных приложения: компонентов, оборудования, организаций, персонала и изделий.
- * Реализован как Singleton.
  */
 public class DataRepository {
     
